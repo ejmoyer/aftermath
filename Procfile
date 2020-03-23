@@ -1,1 +1,1 @@
-web: gunicorn aftermath/:app
+web: gunicorn "aftermath:create_app()"
