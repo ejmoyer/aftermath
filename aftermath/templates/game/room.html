@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+
+<title>{% block title %}{{ title }}{% endblock %}</title>
 {% block header %}
 <h1>You are in {{ title }}</h1>
 {% endblock %}
