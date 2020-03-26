@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}{{ title }}{% endblock %}</title>
+{% block header %}
+<h1>You are in {{ title }}</h1>
+{% endblock %}
+
+{% block content %}
+<h3>My surroundings are..</h3>
+<p>{{ room_description }}</p>
+
+<h3>Should I..</h3>
+<p>{{ room_commands }}</p>
+<form method="post">
+  <input type="text" name="action" required>
+  <input type="submit" value="Take Action">
+</form>
+{% endblock %}

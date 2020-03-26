@@ -25,4 +25,7 @@ def create_app(test_config=None):
     from . import welcome
     app.register_blueprint(welcome.bp)
 
+    from . import rooms
+    app.register_blueprint(rooms.bp)
+
     return app
