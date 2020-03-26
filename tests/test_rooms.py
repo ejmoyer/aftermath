@@ -13,3 +13,6 @@ def test_rooms(client):
         response = rooms.get(room)
         assert response
         assert b'You are in' in response.data
+        assert b'My surroundings are' in response.data
+        assert b'Should I' in response.data
+        assert b'<form method="post">' in response.data
