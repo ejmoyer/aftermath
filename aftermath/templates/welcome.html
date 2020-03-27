@@ -6,7 +6,7 @@
 
 {% block content %}
 <a href="/game/portal" class="button">New Game</a>
-{% if g.save_game == 1 %}
-<a href="{{ g.current_scene }}" class="button">Continue</a>
+{% if g.save_game %}
+<a href="game/{{ g.save_game }}" class="button">Continue</a>
 {% endif %}
 {% endblock %}

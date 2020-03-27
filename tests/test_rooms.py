@@ -1,4 +1,5 @@
 from aftermath import rooms
+from flask import session
 
 def test_rooms(client):
     rooms = {
@@ -16,3 +17,11 @@ def test_rooms(client):
         assert b'My surroundings are' in response.data
         assert b'Should I' in response.data
         assert b'<form method="post">' in response.data
+
+def test_interaction(client, app):
+    inter_resp = client.post(
+            '/game/portal', data={'action': 'save'}
+    )
+    with app.test_request_context('/'):
+        session['save_game'] = 'portal'
+        assert session['save_game']
