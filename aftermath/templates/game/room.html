@@ -8,6 +8,15 @@
 {% block content %}
 <h3>My surroundings are..</h3>
 <p>{{ room_description }}</p>
+{% if g.help %}
+<p>Save your Progress with SAVE</p>
+<p>Move around rooms with GO TO (room name here).
+  Room Names: portal, overgrown, gate, temple, and underworld.</p>
+{% endif %}
+
+{% if g.unique_command %}
+<p>{{ unique_answer }}</p>
+{% endif %}
 
 <h3>Should I..</h3>
 <p>{{ room_commands }}</p>
