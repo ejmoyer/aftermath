@@ -14,9 +14,17 @@
   Room Names: portal, overgrown, gate, temple, and underworld.</p>
 {% endif %}
 
-{% if g.unique_command %}
+{% if g.unique_command and g.room_name == "gate" %}
+<p>{{ unique_answer }}</p>
+<form method="post">
+  <input type="text" name="attemptwin" required>
+  <input type="submit" value="The answer is..">
+</form>
+{% elif g.unique_command %}
 <p>{{ unique_answer }}</p>
 {% endif %}
+
+
 
 <h3>Should I..</h3>
 <p>{{ room_commands }}</p>
